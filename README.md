@@ -1,46 +1,15 @@
-# docker-laravel
-
-## ブランチ
-- sample: サンプルです
-
-
-
-## 環境構築方法
-### 1. git clone
+# docker_laravel
+## masterブランチ
+## ローカル環境初期用
+- git clene
 ```
-git clone https://5next.backlog.jp/git/SRE/docker_laravel.git
- または、git clone 5next@5next.git.backlog.jp:/SRE/docker_laravel.git
+git clone 5next@5next.git.backlog.jp:/MCG/mcg_usukitest.git
 ```
+- ディレクトリ名変更
 ```
-cd docker-laravel
+mv mcg_usukitest docker_laravel
+git checkout -b 作成するブランチ名
+git push -u origin 作成したブランチ名
 ```
-ブランチの切り替え
-```
-git fetch && git checkout sample
-```
-
-### 2. セットアップ
-```
+- 環境ビルド & Laravelインストール 
 docker-compose build && docker-compose up -d && docker-compose exec php laravel new laravel
-```
-
-### 3. 確認
-```
-curl http://localhost:8080
-docker-compose exec php node -v
-docker-compose exec php composer --version
-docker-compose exec php php -v
-mysql -h 0.0.0.0 --port 13306 -u homestead -psecret
-mysql -h 0.0.0.0 --port 13306 -u root -proot
-redis-cli -h 0.0.0.0 -p 16379
-
-.env書換え
-DB_HOST=127.0.0.1 → DB_HOST=mysql
-docker-compose exec php php ./sample/artisan migrate
-```
-
-### 4. 削除
-```
-docker-compose down && docker rmi $(docker images -q)
-rm -rf ./src && mkdir src
-```
