@@ -31,6 +31,7 @@
 
 ## model
 1. docker-compose exec php php ./laravel/artisan make:model Customer -f -m
+2. docker-compose exec php php ./laravel/artisan make:model Report -f -m
 
 
 
