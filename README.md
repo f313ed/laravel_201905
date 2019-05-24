@@ -29,3 +29,12 @@
 2. cd laravel
 3. php vendor/bin/phpunit
 
+## model
+1. docker-compose exec php php ./laravel/artisan make:model Customer -f -m
+
+
+
+
+
+
+end
